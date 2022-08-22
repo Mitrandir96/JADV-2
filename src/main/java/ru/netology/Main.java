@@ -8,10 +8,11 @@ public class Main {
 
         List<String> cars = new ArrayList<>();
 
+
+        new Seller(cars).start();
+
         for (int i = 0; i < 10; i++) {
             new Consumer("Покупатель" + (i+1), cars).start();
-            new Seller(cars).start();
-
         }
 
 

@@ -15,16 +15,17 @@ public class Seller extends Thread {
 
 
     public void run() {
-        synchronized (list) {
-            list.add("Производитель Toyota выпустил 1 авто");
-            list.notify();
+        for (int i = 0; i < 10; i++) {
+            synchronized (list) {
+                list.add("Производитель Toyota выпустил 1 авто");
+                list.notify();
+            }
+            try {
+                Thread.sleep(TIME_CREATE);
+            } catch (InterruptedException e) {
+                return;
+            }
         }
-        try {
-            Thread.sleep(TIME_CREATE);
-        } catch (InterruptedException e) {
-            return;
-        }
-
 
     }
 }

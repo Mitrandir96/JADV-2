@@ -5,7 +5,7 @@ import java.util.List;
 public class Consumer extends Thread {
 
     private final List<String> list;
-    final int DESIRE_BUY = 150;
+    final int DESIRE_BUY = 400;
 
 
     Consumer(String name, List<String> list) {
